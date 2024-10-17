@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "vendor": {
+      "type": "string",
+      "description": "The name of the vendor or supplier"
+    },
+    "invoiceDate": {
+      "type": "string",
+      "format": "date",
+      "description": "The date of the invoice"
+    },
+    "netAmount": {
+      "type": "number",
+      "description": "The overall net amount of the invoice"
+    },
+    "vatPercentage": {
+      "type": "number",
+      "description": "The VAT percentage applied"
+    },
+    "vatAmount": {
+      "type": "number",
+      "description": "The total VAT amount"
+    },
+    "grossAmount": {
+      "type": "number",
+      "description": "The total gross amount (including VAT)"
+    },
+    "invoiceNumber": {
+      "type": "string",
+      "description": "The unique identifier or number of the invoice"
+    },
+    "performancePeriod": {
+      "type": "object",
+      "properties": {
+        "startDate": {
+          "type": "string",
+          "format": "date",
+          "description": "The start date of the performance period"
+        },
+        "endDate": {
+          "type": "string",
+          "format": "date",
+          "description": "The end date of the performance period"
+        }
+      },
+      "required": ["startDate", "endDate"],
+      "description": "The period during which the services were performed or goods were delivered"
+    }
+  },
+  "required": [
+    "vendor",
+    "invoiceDate",
+    "netAmount",
+    "vatPercentage",
+    "vatAmount",
+    "grossAmount",
+    "invoiceNumber",
+    "performancePeriod"
+  ]
+}
+
